@@ -109,3 +109,25 @@ const fullStackDeveloper: FullStackDeveloper = {
 
 
 In the above code, the intersection ensures that FullStackDeveloper has both frontend and backend attributes, making it a combination of both roles. This is useful when you need to represent a developer who works in both frontend and backend, with properties from each role.
+
+
+
+
+#Summary
+
+
+Union types let a variable hold values of different types, which is helpful when you expect different possibilities. 
+
+
+Intersection types combine multiple types into one, ensuring an object has all the required properties from each type.
+
+
+Union and intersection types in TypeScript are useful for making code more flexible and safe. Both help you write clearer, more reliable code by ensuring that your data matches the expected structure while allowing flexibility where needed.
+
+
+
+
+
+
+
+ 

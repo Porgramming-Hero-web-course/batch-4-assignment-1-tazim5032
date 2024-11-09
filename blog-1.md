@@ -15,11 +15,11 @@ A union type allows a variable to hold multiple types. It’s denoted using "|" 
 
 ##Example 1
 
-let userId: string | number;
-userId = 'A23'; 
-userId = 12;
+let Id: string | number;
+Id = 'A23'; 
+Id = 12;
 
-In this example, "userId" is a union type that can hold either a string or a number. This allows "userId" to accept both types of values, making it flexible. Here, "userId" is first assigned a string "A23" and then a number 12, both of which are valid assignments due to the union type. 
+In this example, "Id" is a union type that can hold either a string or a number. This allows "Id" to accept both types of values, making it flexible. Here, "Id" is first assigned a string "A23" and then a number 12, both of which are valid assignments due to the union type. 
 
 Using union types like this is useful when a variable may need to accommodate multiple types, such as when handling different formats of IDs.
 
@@ -53,7 +53,7 @@ Union types like this are useful for restricting values to a predefined set.
 
 #Intersection Type
 
-Intersection types allow you to combine multiple types into a single type. It’s denoted using "&" symbol. It’s like saying, "this must have all these types' properties." 
+Intersection types allow you to combine multiple types into a single type. It’s denoted using "&" symbol. It’s like saying, "this must have all these types properties." 
 
 
 
@@ -75,7 +75,7 @@ interface Admin {
 }
 
 let userAdmin: User & Admin = {
-    name: 'John Doe',
+    name: 'Fakhrul Islam',
     role: 'admin'
 };
 

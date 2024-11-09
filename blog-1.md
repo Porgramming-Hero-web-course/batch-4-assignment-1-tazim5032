@@ -1,71 +1,40 @@
-Union and Intersection types are important features in TypeScript that help to ensure type safety in the code.
 
+# Union and Intersection Types in TypeScript
 
+Union and intersection types are important features in TypeScript that help ensure type safety in your code.
 
+## Union Type
 
+A **union type** allows a variable to hold multiple types. It's denoted using the `|` symbol, which means that the variable can be one type or another, but never both at the same time.
 
+### Example 1
 
-
-
-
-#Union Type
-
-
-A union type allows a variable to hold multiple types. It’s denoted using "|" symbol. This means that the variable can be one type or another, but never both simultaneously.
-
-##Example 1
-
+```typescript
 let Id: string | number;
 Id = 'A23'; 
 Id = 12;
+```
 
-In this example, "Id" is a union type that can hold either a string or a number. This allows "Id" to accept both types of values, making it flexible. Here, "Id" is first assigned a string "A23" and then a number 12, both of which are valid assignments due to the union type. 
+In this example, `Id` can be either a `string` or a `number`. The union type makes it flexible to hold both types.
 
-Using union types like this is useful when a variable may need to accommodate multiple types, such as when handling different formats of IDs.
+### Example 2
 
+```typescript
+type FrontendDeveloper = 'SeniorDev' | 'juniorDev';
+const newDeveloper: FrontendDeveloper = 'juniorDev';
+```
 
+Here, `FrontendDeveloper` is a union type that can only be either `'SeniorDev'` or `'juniorDev'`. This ensures that only predefined values are allowed.
 
+---
 
+## Intersection Type
 
+An **intersection type** combines multiple types into one. It's denoted using the `&` symbol. This means that the object must have properties from all combined types.
 
+### Example 1
 
-##Example 2
-
-type FrontendDeveloper = 'SeniorDev'|'juniorDev'
-
-const newDeveloper : FrontendDeveloper = 'juniorDev'
-
-Here, FrontendDeveloper is a union type that can only be either 'SeniorDev' or 'juniorDev'. The variable newDeveloper is assigned 'juniorDev', which is valid because it matches one of the options in FrontendDeveloper.
-
-Union types like this are useful for restricting values to a predefined set.
-
-
-
-
-
-
-
-
-
-
-
-
-
-#Intersection Type
-
-Intersection types allow you to combine multiple types into a single type. It’s denoted using "&" symbol. It’s like saying, "this must have all these types properties." 
-
-
-
-
-
-
-
-
-
-
-##Example 1
-
+```typescript
 interface User {
     name: string;
 }
@@ -78,26 +47,22 @@ let userAdmin: User & Admin = {
     name: 'Fakhrul Islam',
     role: 'admin'
 };
+```
 
+In this case, `userAdmin` must have both `name` (from `User`) and `role` (from `Admin`), enforcing that the object meets both interface requirements.
 
-In this code, userAdmin must have both name (from User) and role (from Admin). Using intersections, we enforce that userAdmin meets both interface requirements, making it versatile for scenarios where combined properties are needed.
+### Example 2
 
-
-
-
-
-
-##Example 2
-
+```typescript
 type FrontendDeveloper = {
-    skills: string[],
-    designation1: 'FrontendDeveloper'
-}
+    skills: string[];
+    designation1: 'FrontendDeveloper';
+};
 
 type BackendDeveloper = {
-    skills: string[],
-    designation2: 'BackendDeveloper'
-}
+    skills: string[];
+    designation2: 'BackendDeveloper';
+};
 
 type FullStackDeveloper = FrontendDeveloper & BackendDeveloper;
 
@@ -106,28 +71,16 @@ const fullStackDeveloper: FullStackDeveloper = {
     designation1: 'FrontendDeveloper',
     designation2: 'BackendDeveloper'
 };
+```
 
+Here, `FullStackDeveloper` combines the properties from both `FrontendDeveloper` and `BackendDeveloper`, ensuring the object has both frontend and backend attributes.
 
-In the above code, the intersection ensures that FullStackDeveloper has both frontend and backend attributes, making it a combination of both roles. This is useful when you need to represent a developer who works in both frontend and backend, with properties from each role.
+---
 
+## Summary
 
+- **Union types** allow a variable to hold values of different types, offering flexibility for handling multiple possibilities.
+- **Intersection types** combine multiple types into one, ensuring that an object has all the required properties from each type.
 
+Both **union** and **intersection** types in TypeScript make your code more flexible, reliable, and type-safe, ensuring that data matches the expected structure while allowing flexibility where needed.
 
-#Summary
-
-
-Union types let a variable hold values of different types, which is helpful when you expect different possibilities. 
-
-
-Intersection types combine multiple types into one, ensuring an object has all the required properties from each type.
-
-
-Union and intersection types in TypeScript are useful for making code more flexible and safe. Both help you write clearer, more reliable code by ensuring that your data matches the expected structure while allowing flexibility where needed.
-
-
-
-
-
-
-
- 

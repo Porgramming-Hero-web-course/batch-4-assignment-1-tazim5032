@@ -1,6 +1,13 @@
 Union and Intersection types are important features in TypeScript that help to ensure type safety in the code.
 
 
+
+
+
+
+
+
+
 #Union Type
 
 
@@ -17,6 +24,11 @@ In this example, "userId" is a union type that can hold either a string or a num
 Using union types like this is useful when a variable may need to accommodate multiple types, such as when handling different formats of IDs.
 
 
+
+
+
+
+
 ##Example 2
 
 type FrontendDeveloper = 'SeniorDev'|'juniorDev'
@@ -31,9 +43,25 @@ Union types like this are useful for restricting values to a predefined set.
 
 
 
+
+
+
+
+
+
+
+
 #Intersection Type
 
 Intersection types allow you to combine multiple types into a single type. It’s denoted using "&" symbol. It’s like saying, "this must have all these types' properties." 
+
+
+
+
+
+
+
+
 
 
 ##Example 1
@@ -53,6 +81,10 @@ let userAdmin: User & Admin = {
 
 
 In this code, userAdmin must have both name (from User) and role (from Admin). Using intersections, we enforce that userAdmin meets both interface requirements, making it versatile for scenarios where combined properties are needed.
+
+
+
+
 
 
 ##Example 2
